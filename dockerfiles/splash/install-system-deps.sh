@@ -4,6 +4,7 @@
 apt-get update -q && \
 apt-get install -y --no-install-recommends \
     xvfb \
+    x11vnc \
     build-essential \
     libsqlite3-dev \
     zlib1g \
