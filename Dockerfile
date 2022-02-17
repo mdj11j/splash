@@ -46,6 +46,7 @@ RUN /tmp/download-pyqt5.sh /tmp/sip.tar.gz /tmp/pyqt5.tar.gz /tmp/webengine.tar.
 
 FROM ubuntu:18.04 as qtbase
 ENV DEBIAN_FRONTEND noninteractive
+RUN echo "deb http://mirrors.cloud.tencent.com/ubuntu/ bionic main restricted universe multiverse \ndeb http://mirrors.cloud.tencent.com/ubuntu/ bionic-security main restricted universe multiverse \ndeb http://mirrors.cloud.tencent.com/ubuntu/ bionic-updates main restricted universe multiverse \n#deb http://mirrors.cloud.tencent.com/ubuntu/ bionic-proposed main restricted universe multiverse \n#deb http://mirrors.cloud.tencent.com/ubuntu/ bionic-backports main restricted universe multiverse \ndeb-src http://mirrors.cloud.tencent.com/ubuntu/ bionic main restricted universe multiverse \ndeb-src http://mirrors.cloud.tencent.com/ubuntu/ bionic-security main restricted universe multiverse \ndeb-src http://mirrors.cloud.tencent.com/ubuntu/ bionic-updates main restricted universe multiverse \n#deb-src http://mirrors.cloud.tencent.com/ubuntu/ bionic-proposed main restricted universe multiverse \n#deb-src http://mirrors.cloud.tencent.com/ubuntu/ bionic-backports main restricted universe multiverse" > /etc/apt/sources.list
 
 COPY dockerfiles/splash/prepare-install.sh /tmp/prepare-install.sh
 RUN /tmp/prepare-install.sh
